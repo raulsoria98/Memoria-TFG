@@ -1,11 +1,12 @@
 \chapter{Planificación}
 En este capítulo se va a realizar una planificación del TFG, en la que se
-va a estimar el tiempo que se va a tardar en realizar cada tarea del proyecto
+va a explicar la metodología que será utilizada para el desarrollo del proyecto,
+se va a estimar el tiempo que se va a tardar en realizar cada tarea del proyecto
 y el coste económico que supondría realizar el mismo.
 
 \section{Metodología utilizada}
-Para el desarrollo de la aplicación voy a enfocarlo con una metodología
-tradicional, ya que es la que más cómoda me resulta y la que más se adapta
+Para el desarrollo de la aplicación voy a enfocarlo con una \textbf{metodología
+tradicional}, ya que es la que más cómoda me resulta y la que más se adapta
 a este tipo de proyectos. Además, al ser un proyecto de una sola persona, no es
 necesario utilizar una metodología ágil y desde mi punto de vista entorpecería
 más el flujo de trabajo.
@@ -25,9 +26,16 @@ aplicación.
 
 \subsection{Seguimiento del proyecto}
 Para el seguimiento del desarrollo de la aplicación se utilizará la herramienta
-\textit{Trello} \cite{trello}, que permite crear tableros de kanban para oraganizar
+\textit{Trello} \cite{trello}, perteneciente a la empresa \textit{Atlassian} \cite{atlassian}.
+Esta herramienta permite crear tableros de kanban para oraganizar
 las tareas pendientes de realizar, las que están en proceso y las que ya se han
 realizado. Se puede ver el tablero kanban en la figura \ref{fig:trello}.
+
+En la imágen se puede ver cómo están dividadas las tareas en las tres columnas y
+etiquetadas según la etapa a la que pertenecen. Algunas de las tarjetas de tarea
+tienen checklist para poder ir marcando las subtareas que se van realizando. Esto
+permite tener un seguimiento de las tareas que se van realizando y las que aún
+faltan por hacer.
 
 \begin{figure}[H]
   \centering
@@ -42,12 +50,27 @@ herramienta de control de versiones \textit{Git} \cite{git}, que permite llevar 
 control de los cambios realizados en el código fuente de la aplicación. Además, estos
 cambios se irán subiendo a la plataforma \textit{GitHub} \cite{github}.
 
+Para seguir una estructura de los commits que se van realizando, se utilizará
+el mensaje de commit con el formato "\texttt{<stack>} - \texttt{<mensaje>}", donde \texttt{<stack>}
+es \textit{SERVER} o \textit{CLIENT} dependiendo de si el commit afecta al backend o
+al frontend de la aplicación, y \texttt{<mensaje>} es la descripción de los cambios que
+se han realizado.
+
+En la figura \ref{fig:commits} se puede ver un ejemplo de una captura sacada
+del listado de commits realizados en el repositorio de \textit{GitHub} \cite{github}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{commits}
+  \caption{Ejemplo de mensajes de commit}
+  \label{fig:commits}
+\end{figure}
+
 \section{Temporización}
 En esta sección se mostrará a través de un diagrama de Gantt la planificación
 temporal del proyecto desglosado en tareas. Para ello se ha utilizado la
 herramienta \textit{Lucidchart} \cite{lucidchart}.
 
-\subsection{Diagrama de Gantt}
 En la figura \ref{fig:gantt} se muestra el diagrama de Gantt con el desglose de las
 tareas que se van a realizar, así como la duración de cada una de ellas en semanas.
 Los colores diferencian las etapas del desarrollo del proyecto.
@@ -59,3 +82,37 @@ Los colores diferencian las etapas del desarrollo del proyecto.
 \end{figure}
 
 \section{Presupuesto}
+Para elaborar el presupuesto se ha tenido en cuenta el coste de la hora de trabajo
+de un ingeniero informático en España, que es de unos 14€/hora \cite{coste-hora}.
+Teniendo en cuenta que la duración del proyecto se estima en 16 semanas, y que
+se van a dedicar unas 20 horas semanales, el coste del personal sería de \textbf{4480€}.
+
+\vspace{1cm}
+
+En cuanto al coste de los recursos materiales, se ha calculado el coste del portátil
+prorrateado en el tiempo que se va a utilizar para el desarrollo del proyecto. El
+coste del portátil es de 1799€ \cite{portatil} y teniendo en cuenta que el ciclo de vida de un
+portátil es de unos 5 años, el coste prorrateado sería de 29,98€/mes. Por lo tanto,
+el coste del portátil durante las 16 semanas de duración del proyecto sería de
+\textbf{119,92€}.
+
+\vspace{1cm}
+
+Por último, el coste de los recursos de software utilizados para el desarrollo
+del proyecto es de \textbf{0€}, ya que se han utilizado herramientas de software libre.
+
+El editor de texto utilizado es \textit{Visual Studio Code} \cite{vscode} que tiene
+licencia \textit{MIT} \cite{mit-license}.
+
+El sistema de control de versiones \textit{Git} \cite{git} tiene licencia
+\textit{GPLv2} \cite{gplv2}. Y la plataforma \textit{GitHub} \cite{github} tiene
+licencia \textit{MIT} \cite{mit-license}.
+
+Para el desarrollo del backend se va a utilizar \textit{Node.js} \cite{nodejs}
+y para el frontend \textit{React} \cite{react}, ambos con licencia
+\textit{MIT} \cite{mit-license} también.
+
+\vspace{1cm}
+
+Teniendo en cuenta todo lo anterior, el coste total del proyecto sería de
+\textbf{4599,92€}.

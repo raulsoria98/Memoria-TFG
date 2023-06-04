@@ -1,0 +1,861 @@
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 1.1 \\
+        \hline
+        \textbf{Nombre} & Registrarse como usuario registrado \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá registrarse en la aplicación \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-1.1 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: ninguno
+        
+        Requisito de datos de escritura: RDW-1.1 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-1.1} & Datos de entrada para el registro de un usuario:
+            \begin{itemize}
+                \item Datos de usuario RI-1
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-1.1} & Datos almacenados de un usuario:
+            \begin{itemize}
+                \item Datos de usuario RI-1
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-1.1}
+    \label{tab:rf-1-1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 1.2 \\
+        \hline
+        \textbf{Nombre} & Registrarse como artista \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá registrarse en la aplicación como artista \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-1.2 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: ninguno
+        
+        Requisito de datos de escritura: RDW-1.2 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-1.2} & Datos de entrada para el registro de un usuario como artista:
+            \begin{itemize}
+                \item Usuario RI-1
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-1.2} & Datos almacenados de un usuario:
+            \begin{itemize}
+                \item Usuario RI-1
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-1.2}
+    \label{tab:rf-1-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 2 \\
+        \hline
+        \textbf{Nombre} & Iniciar sesión \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá iniciar sesión en la aplicación \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-2 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-2
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-2} & Datos de entrada para iniciar sesión:
+            \begin{itemize}
+                \item Correo electrónico RI-1.3
+                \item Contraseña RI-1.4
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-2} & Datos de lectura de un usuario:
+            \begin{itemize}
+                \item Usuario RI-1
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-2}
+    \label{tab:rf-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 3.1 \\
+        \hline
+        \textbf{Nombre} & Borrar cuenta como usuario registrado \\
+        \hline
+        \textbf{Descripción} & Un usuario registrado podrá borrar su cuenta \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario registrado
+        
+        Requisito de datos de entrada: ninguno \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-3.1
+        
+        Requisito de datos de escritura: RDW-3.1 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDR-3.1} & Datos de lectura para borrar un usuario:
+            \begin{itemize}
+                \item Usuario RI-1
+                \item Obras del usuario RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-3.1} & Datos de escritura de un usuario:
+            \begin{itemize}
+                \item Eliminar usuario RI-1
+                \item Eliminar obras del usuario RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-3.1}
+    \label{tab:rf-3-1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 3.2 \\
+        \hline
+        \textbf{Nombre} & Borrar cuenta como administrador \\
+        \hline
+        \textbf{Descripción} & Un administrador podrá borrar la cuenta de un usuario \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Administrador
+        
+        Requisito de datos de entrada: RDE-3.2 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-3.2
+        
+        Requisito de datos de escritura: RDW-3.2 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-3.2} & Datos de entrada para borrar un usuario:
+            \begin{itemize}
+                \item Usuario RI-1
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-3.2} & Datos de lectura para borrar un usuario:
+            \begin{itemize}
+                \item Usuario RI-1
+                \item Obras del usuario RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-3.2} & Datos de escritura para borrar un usuario:
+            \begin{itemize}
+                \item Eliminar usuario RI-1
+                \item Eliminar obras del usuario RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-3.2}
+    \label{tab:rf-3-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 4 \\
+        \hline
+        \textbf{Nombre} & Mostrar galería \\
+        \hline
+        \textbf{Descripción} & Mostrar todas las obras de la galería \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-4 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-4
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: RDS-4 \\
+        \hline
+        \textbf{RDE-4} & Datos de entrada para mostrar la galería:
+            \begin{itemize}
+                \item Tipo de obra RI-2.3
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-4} & Datos de lectura para mostrar la galería:
+            \begin{itemize}
+                \item Obras RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDS-4} & Datos de salida para mostrar la galería:
+            \begin{itemize}
+                \item Obras RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-4}
+    \label{tab:rf-4}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 5 \\
+        \hline
+        \textbf{Nombre} & Subir obra en galería \\
+        \hline
+        \textbf{Descripción} & Un artista podrá subir una obra a la galería \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Artista
+        
+        Requisito de datos de entrada: RDE-5 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: ninguno
+        
+        Requisito de datos de escritura: RDW-5 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-5} & Datos de entrada para subir una obra:
+            \begin{itemize}
+                \item Obra RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-5} & Datos de escritura para subir una obra:
+            \begin{itemize}
+                \item Obra RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-5}
+    \label{tab:rf-5}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 6 \\
+        \hline
+        \textbf{Nombre} & Mostrar detalles de obra \\
+        \hline
+        \textbf{Descripción} & Mostrar los detalles de una obra \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-6 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-6
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: RDS-6 \\
+        \hline
+        \textbf{RDE-6} & Datos de entrada para mostrar los detalles de una obra:
+            \begin{itemize}
+                \item Obra RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-6} & Datos de lectura para mostrar los detalles de una obra:
+            \begin{itemize}
+                \item Contenido obra RI-2.7
+            \end{itemize} \\
+        \hline
+        \textbf{RDS-6} & Datos de salida para mostrar los detalles de una obra:
+            \begin{itemize}
+                \item Contenido obra RI-2.7
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-6}
+    \label{tab:rf-6}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 7 \\
+        \hline
+        \textbf{Nombre} & Valorar obra \\
+        \hline
+        \textbf{Descripción} & Un usuario registrado podrá valorar una obra con
+        una puntuación y un comentario opcionalmente \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario registrado
+        
+        Requisito de datos de entrada: RDE-7 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: ninguno
+        
+        Requisito de datos de escritura: RDW-7 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-7} & Datos de entrada para valorar una obra:
+            \begin{itemize}
+                \item Obra RI-2
+                \item Valoración RI-3.1
+                \item Comentario RI-3.2
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-7} & Datos de escritura para valorar una obra:
+            \begin{itemize}
+                \item Valoración RI-3
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-7}
+    \label{tab:rf-7}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 8 \\
+        \hline
+        \textbf{Nombre} & Mostrar valoraciones de obra \\
+        \hline
+        \textbf{Descripción} & Mostrar las valoraciones de una obra \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-8 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-8
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: RDS-8 \\
+        \hline
+        \textbf{RDE-8} & Datos de entrada para mostrar las valoraciones de una obra:
+            \begin{itemize}
+                \item Obra RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-8} & Datos de lectura para mostrar las valoraciones de una obra:
+            \begin{itemize}
+                \item Valoraciones RI-3
+            \end{itemize} \\
+        \hline
+        \textbf{RDS-8} & Datos de salida para mostrar las valoraciones de una obra:
+            \begin{itemize}
+                \item Valoraciones RI-3
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-8}
+    \label{tab:rf-8}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 9.1 \\
+        \hline
+        \textbf{Nombre} & Ordenar obras por fecha descendente \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá visualizar las obras ordenadas
+        por fecha de creación de forma descendente \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: ninguno \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-9.1
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: RDS-9.1 \\
+        \hline
+        \textbf{RDR-9.1} & Datos de lectura para mostrar las obras ordenadas por fecha
+        de creación de forma descendente:
+            \begin{itemize}
+                \item Obras RI-2
+                \item Fecha de creación RI-2.4
+            \end{itemize} \\
+        \hline
+        \textbf{RDS-9.1} & Datos de salida para mostrar las obras ordenadas por fecha
+        de creación de forma descendente:
+            \begin{itemize}
+                \item Obras RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-9.1}
+    \label{tab:rf-9-1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 9.2 \\
+        \hline
+        \textbf{Nombre} & Ordenar obras por fecha ascendente \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá visualizar las obras ordenadas
+        por fecha de creación de forma ascendente \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: ninguno \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-9.2
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: RDS-9.2 \\
+        \hline
+        \textbf{RDR-9.2} & Datos de lectura para mostrar las obras ordenadas por fecha
+        de creación de forma ascendente:
+            \begin{itemize}
+                \item Obras RI-2
+                \item Fecha de creación RI-2.4
+            \end{itemize} \\
+        \hline
+        \textbf{RDS-9.2} & Datos de salida para mostrar las obras ordenadas por fecha
+        de creación de forma ascendente:
+            \begin{itemize}
+                \item Obras RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-9.2}
+    \label{tab:rf-9-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 10.1 \\
+        \hline
+        \textbf{Nombre} & Ordenar obras por valoración descendente \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá visualizar las obras ordenadas
+        por valoración de forma descendente \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: ninguno \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-10.1
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: RDS-10.1 \\
+        \hline
+        \textbf{RDR-10.1} & Datos de lectura para mostrar las obras ordenadas por valoración
+        de forma descendente:
+            \begin{itemize}
+                \item Obras RI-2
+                \item Valoración media RI-2.5
+            \end{itemize} \\
+        \hline
+        \textbf{RDS-10.1} & Datos de salida para mostrar las obras ordenadas por valoración
+        de forma descendente:
+            \begin{itemize}
+                \item Obras RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-10.1}
+    \label{tab:rf-10-1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 10.2 \\
+        \hline
+        \textbf{Nombre} & Ordenar obras por valoración ascendente \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá visualizar las obras ordenadas
+        por valoración de forma ascendente \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: ninguno \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-10.2
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: RDS-10.2 \\
+        \hline
+        \textbf{RDR-10.2} & Datos de lectura para mostrar las obras ordenadas por valoración
+        de forma ascendente:
+            \begin{itemize}
+                \item Obras RI-2
+                \item Valoración media RI-2.5
+            \end{itemize} \\
+        \hline
+        \textbf{RDS-10.2} & Datos de salida para mostrar las obras ordenadas por valoración
+        de forma ascendente:
+            \begin{itemize}
+                \item Obras RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-10.2}
+    \label{tab:rf-10-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 11 \\
+        \hline
+        \textbf{Nombre} & Filtrar obras por autor \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá visualizar las obras de un autor
+        concreto \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-11 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-11
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: RDS-11 \\
+        \hline
+        \textbf{RDE-11} & Datos de entrada para mostrar las obras de un autor:
+            \begin{itemize}
+                \item Autor RI-2.6
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-11} & Datos de lectura para mostrar las obras de un autor:
+            \begin{itemize}
+                \item Obras RI-2
+                \item Autor RI-2.6
+            \end{itemize} \\
+        \hline
+        \textbf{RDS-11} & Datos de salida para mostrar las obras de un autor:
+            \begin{itemize}
+                \item Obras RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-11}
+    \label{tab:rf-11}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 12.1 \\
+        \hline
+        \textbf{Nombre} & Eliminar obra como artista \\
+        \hline
+        \textbf{Descripción} & Un artista podrá eliminar una obra suya \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Artista
+
+        Requisito de datos de entrada: RDE-12.1 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-12.1
+
+        Requisito de datos de escritura: RDW-12.1 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-12.1} & Datos de entrada para eliminar una obra:
+            \begin{itemize}
+                \item Obra RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-12.1} & Datos de lectura para eliminar una obra:
+            \begin{itemize}
+                \item Obra RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-12.1} & Datos de escritura para eliminar una obra:
+            \begin{itemize}
+                \item Eliminar obra RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-12.1}
+    \label{tab:rf-12-1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 12.2 \\
+        \hline
+        \textbf{Nombre} & Eliminar obra como administrador \\
+        \hline
+        \textbf{Descripción} & Un administrador podrá eliminar una obra de un artista \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Administrador
+
+        Requisito de datos de entrada: RDE-12.2 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-12.2
+
+        Requisito de datos de escritura: RDW-12.2 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-12.2} & Datos de entrada para eliminar una obra:
+            \begin{itemize}
+                \item Obra RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-12.2} & Datos de lectura para eliminar una obra:
+            \begin{itemize}
+                \item Obra RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-12.2} & Datos de escritura para eliminar una obra:
+            \begin{itemize}
+                \item Eliminar obra RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-12.2}
+    \label{tab:rf-12-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 13.1 \\
+        \hline
+        \textbf{Nombre} & Eliminar valoración como usuario registrado \\
+        \hline
+        \textbf{Descripción} & Un usuario registrado podrá eliminar una valoración suya \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario registrado
+
+        Requisito de datos de entrada: RDE-13.1 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-13.1
+
+        Requisito de datos de escritura: RDW-13.1 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-13.1} & Datos de entrada para eliminar una valoración:
+            \begin{itemize}
+                \item Valoración RI-3
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-13.1} & Datos de lectura para eliminar una valoración:
+            \begin{itemize}
+                \item Valoración RI-3
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-13.1} & Datos de escritura para eliminar una valoración:
+            \begin{itemize}
+                \item Eliminar valoración RI-3
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-13.1}
+    \label{tab:rf-13-1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 13.2 \\
+        \hline
+        \textbf{Nombre} & Eliminar valoración como administrador \\
+        \hline
+        \textbf{Descripción} & Un administrador podrá eliminar una valoración de un usuario \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Administrador
+
+        Requisito de datos de entrada: RDE-13.2 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-13.2
+
+        Requisito de datos de escritura: RDW-13.2 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-13.2} & Datos de entrada para eliminar una valoración:
+            \begin{itemize}
+                \item Valoración RI-3
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-13.2} & Datos de lectura para eliminar una valoración:
+            \begin{itemize}
+                \item Valoración RI-3
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-13.2} & Datos de escritura para eliminar una valoración:
+            \begin{itemize}
+                \item Eliminar valoración RI-3
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-13.2}
+    \label{tab:rf-13-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3cm}|p{8cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 14 \\
+        \hline
+        \textbf{Nombre} & Cerrar sesión \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá cerrar sesión en la aplicación \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+
+        Requisito de datos de entrada: ninguno \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: ninguno
+
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-14}
+    \label{tab:rf-14}
+\end{table}

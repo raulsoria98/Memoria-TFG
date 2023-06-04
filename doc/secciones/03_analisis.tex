@@ -1,12 +1,300 @@
 \chapter{Análisis del problema}
+En este capítulo vamos a realizar un análisis de las funcionalidades que debe cumplir
+nuestra aplicación. Para ello, vamos a definir los requisitos funcionales,
+no funcionales y de información que debe cumplir. Además, vamos a definir los
+casos de uso que se van a dar en nuestra aplicación con sus respectivos diagramas.
 
 \section{Requisitos}
+Los actores que van a interactuar con nuestra aplicación son los siguientes:
+
+\begin{itemize}
+    \item \textbf{Usuario:} Usuario no registrado en la aplicación. Tendrá funcionalidades
+    básicas.
+    \item \textbf{Usuario registrado:} Usuario registrado en la aplicación. Tendrá
+    acceso a más funcionalidades que el usuario no registrado.
+    \item \textbf{Artista:} Usuario registrado con rol de artista. Podrá subir sus
+    obras a la aplicación.
+\end{itemize}
 
 \subsection{Requisitos funcionales}
+A continuación se van a definir los requisitos funcionales que debe cumplir nuestra
+aplicación.
+
+\begin{itemize}
+    \item \textbf{RF-1:} Registrarse en la aplicación
+    \begin{itemize}
+        \item \textbf{RF-1.1:} Registrarse como usuario
+        \item \textbf{RF-1.2:} Registrarse como artista
+    \end{itemize}
+    \item \textbf{RF-2:} Iniciar sesión
+    \item \textbf{RF-3:} Eliminar usuario
+    \begin{itemize}
+        \item \textbf{RF-3.1:} Borrar cuenta como usuario registrado
+        \item \textbf{RF-3.2:} Borrar cuenta como administrador
+    \end{itemize}
+    \item \textbf{RF-4:} Mostrar galería
+    \item \textbf{RF-5:} Subir obra en galería
+    \item \textbf{RF-6:} Mostrar detalles de obra
+    \item \textbf{RF-7:} Valorar obra
+    \item \textbf{RF-8:} Mostrar valoraciones de obra
+    \item \textbf{RF-9:} Ordenar obras por fecha
+    \begin{itemize}
+        \item \textbf{RF-9.1:} Ordenar obras fecha descendente
+        \item \textbf{RF-9.2:} Ordenar obras fecha ascendente
+    \end{itemize}
+    \item \textbf{RF-10:} Ordenar obras por valoración
+    \begin{itemize}
+        \item \textbf{RF-10.1:} Ordenar obras valoración descendente
+        \item \textbf{RF-10.2:} Ordenar obras valoración ascendente
+    \end{itemize}
+    \item \textbf{RF-11:} Filtrar obras por autor
+    \item \textbf{RF-12:} Eliminar obra
+    \begin{itemize}
+        \item \textbf{RF-12.1:} Eliminar obra como artista
+        \item \textbf{RF-12.2:} Eliminar obra como administrador
+    \end{itemize}
+    \item \textbf{RF-13:} Eliminar valoración
+    \begin{itemize}
+        \item \textbf{RF-13.1:} Eliminar valoración como usuario registrado
+        \item \textbf{RF-13.2:} Eliminar valoración como administrador
+    \end{itemize}
+    \item \textbf{RF-14:} Cerrar sesión
+\end{itemize}
 
 \subsection{Requisitos no funcionales}
+En cuanto a los requisitos no funcionales, se van a definir los siguientes:
+
+\begin{itemize}
+    \item \textbf{RNF-1:} Eficiencia
+    \begin{itemize}
+        \item \textbf{RNF-1.1:} Toda funcionalidad ha de responder al usuario en menos
+        de 5 segundos.
+        \item \textbf{RNF-1.2:} La aplicación ha de operar correctamente con hasta 100
+        sesiones concurrentes.
+        \item \textbf{RNF-1.3:} Los datos modificados en la base de datos tienen que
+        estar actualizados en menos de 5 segundos.
+    \end{itemize}
+    \item \textbf{RNF-2:} Seguridad lógica y de datos
+    \begin{itemize}
+        \item \textbf{RNF-2.1:} Los permisos de usuario administarador solo pueden ser
+        modificados por otro usuario administrador.
+        \item \textbf{RNF-2.2:} La aplicación se desarrollará aplicando patrones de
+        programación que aumenten la seguirdad de los datos.
+        \item \textbf{RNF-2.3:} Los datos sensibles de los usuarios serán encriptados
+        antes de almacenarse en la base de datos.
+    \end{itemize}
+    \item \textbf{RNF-3:} Usabilidad
+    \begin{itemize}
+        \item \textbf{RNF-3.1:} La aplicación ha de ser intuitiva y fácil de usar por
+        personas que no posean grandes conocimientos informáticos.
+        \item \textbf{RNF-3.2:} La aplicación cumplirá con los estándares mínimos de
+        accesibilidad.
+        \item \textbf{RNF-3.3:} Los mensajes de error que proporcione la aplicación
+        han de ser informativos y orientados al usuario final.
+        \item \textbf{RNF-3.4:} La aplicación ha de ser compatible con los navegadores
+        más utilizados.
+        \item \textbf{RNF-3.5:} La aplicación ha de tener un diseño responsive, adaptándose
+        a diversos tamaños de pantalla y dispositivos.
+        \item \textbf{RNF-3.6:} Las imágenes se almacenarán en formato \textit{JPEG} o
+        \textit{PNG}.
+    \end{itemize}
+\end{itemize}
 
 \subsection{Requisitos de información}
+Ahora se van a definir los requisitos de información que debe cumplir nuestra
+aplicación.
+
+\begin{itemize}
+    \item \textbf{RI-1:} Usuario
+    \begin{itemize}
+        \item \textbf{RI-1.1:} Nombre
+        \item \textbf{RI-1.2:} Apellidos
+        \item \textbf{RI-1.3:} Correo electrónico
+        \item \textbf{RI-1.4:} Contraseña
+        \item \textbf{RI-1.5:} Es o no artista
+        \item \textbf{RI-1.6:} Es o no administrador
+    \end{itemize}
+    \item \textbf{RI-2:} Obra
+    \begin{itemize}
+        \item \textbf{RI-2.1:} Título
+        \item \textbf{RI-2.2:} Descripción
+        \item \textbf{RI-2.3:} Fecha de creación
+        \item \textbf{RI-2.4:} Valoración media
+        \item \textbf{RI-2.5:} Autor
+        \item \textbf{RI-2.6:} Archivo
+    \end{itemize}
+    \item \textbf{RI-3:} Valoración
+    \begin{itemize}
+        \item \textbf{RI-3.1:} Valoración
+        \item \textbf{RI-3.2:} Comentario
+    \end{itemize}
+\end{itemize}
+
+\subsection{Descripción de los requisitos}
+A continuación se van a realizar las tablas de descripción de los requisitos funcionales.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{4cm}|p{7cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 1.1 \\
+        \hline
+        \textbf{Nombre} & Registrarse como usuario registrado \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá registrarse en la aplicación \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-1.1 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: ninguno
+        
+        Requisito de datos de escritura: RDW-1.1 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-1.1} & Datos de entrada para el registro de un usuario:
+            \begin{itemize}
+                \item Datos de usuario RI-1
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-1.1} & Datos almacenados de un usuario:
+            \begin{itemize}
+                \item Datos de usuario RI-1
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-1.1}
+    \label{tab:rf-1-1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{4cm}|p{7cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 1.2 \\
+        \hline
+        \textbf{Nombre} & Registrarse como artista \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá registrarse en la aplicación como artista \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-1.2 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: ninguno
+        
+        Requisito de datos de escritura: RDW-1.2 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-1.2} & Datos de entrada para el registro de un usuario como artista:
+            \begin{itemize}
+                \item Usuario RI-1
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-1.2} & Datos almacenados de un usuario:
+            \begin{itemize}
+                \item Usuario RI-1
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-1.2}
+    \label{tab:rf-1-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{4cm}|p{7cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 2 \\
+        \hline
+        \textbf{Nombre} & Iniciar sesión \\
+        \hline
+        \textbf{Descripción} & Un usuario podrá iniciar sesión en la aplicación \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario
+        
+        Requisito de datos de entrada: RDE-2 \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-2
+        
+        Requisito de datos de escritura: ninguno \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDE-2} & Datos de entrada para iniciar sesión:
+            \begin{itemize}
+                \item Correo electrónico RI-1.3
+                \item Contraseña RI-1.4
+            \end{itemize} \\
+        \hline
+        \textbf{RDR-2} & Datos de lectura de un usuario:
+            \begin{itemize}
+                \item Usuario RI-1
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-2}
+    \label{tab:rf-2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{4cm}|p{7cm}|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Detalle} & \textbf{Descripción} \\
+        \hline
+        \textbf{RF\#} & 3.1 \\
+        \hline
+        \textbf{Nombre} & Borrar cuenta como usuario registrado \\
+        \hline
+        \textbf{Descripción} & Un usuario registrado podrá borrar su cuenta \\
+        \hline
+        \textbf{Entrada} &
+        Agente externo: Usuario registrado
+        
+        Requisito de datos de entrada: ninguno \\
+        \hline
+        \textbf{BD} &
+        Requisito de datos de lectura: RDR-3.1
+        
+        Requisito de datos de escritura: RDW-3.1 \\
+        \hline
+        \textbf{Salida} & Requisito de datos de salida: ninguno \\
+        \hline
+        \textbf{RDR-3.1} & Datos de lectura para borrar un usuario:
+            \begin{itemize}
+                \item Usuario RI-1
+                \item Obras del usuario RI-2
+            \end{itemize} \\
+        \hline
+        \textbf{RDW-3.1} & Datos de escritura de un usuario:
+            \begin{itemize}
+                \item Eliminar usuario RI-1
+                \item Eliminar obras del usuario RI-2
+            \end{itemize} \\
+        \hline
+    \end{tabular}
+    \caption{Descripción del requisito funcional RF-3.1}
+    \label{tab:rf-3-1}
+\end{table}
 
 \section{Casos de uso}
 

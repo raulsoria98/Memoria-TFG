@@ -14,6 +14,8 @@ Los actores que van a interactuar con nuestra aplicación son los siguientes:
     acceso a más funcionalidades que el usuario no registrado.
     \item \textbf{Artista:} Usuario registrado con rol de artista. Podrá subir sus
     obras a la aplicación.
+    \item \textbf{Administrador:} Usuario registrado con rol de administrador. Podrá
+    realizar tareas de administración.
 \end{itemize}
 
 \subsection{Requisitos funcionales}
@@ -137,5 +139,42 @@ A continuación se van a realizar las tablas de descripción de los requisitos f
 \input{tablas/requisitos}
 
 \section{Casos de uso}
+En esta sección se van a describir los casos de uso que se pueden dar
+en la aplicación. En primer lugar difiniremos los actores que van a realizar
+los casos de uso y después se definirán los casos de uso con sus respectivos
+diagramas.
 
+\subsection{Actores}
+Se van a definir las tablas con las características de los actores y los casos
+de uso en los que se referencian:
+
+\input{tablas/actores}
+
+\subsection{Definición de casos de uso}
+A continuación se van a definir los casos de uso de la aplicación especificando
+el tipo de los mismos y los actores que intervienen en cada uno de ellos:
+
+\input{tablas/casos_de_uso}
+
+\newpage
+\subsection{Diagramas de casos de uso}
+Ahora se van a mostrar los diagramas de casos de uso de la aplicación y su interacción
+entre ellos y con los actores. Los diagramas se han realizado con la herramienta
+\textit{Draw.io} \cite{drawio}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/casos_de_uso.png}
+    \caption{Diagrama de casos de uso}
+    \label{fig:casos_de_uso}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/casos_de_uso_2.png}
+    \caption{Diagrama de casos de uso (continuación)}
+    \label{fig:casos_de_uso_continuacion}
+\end{figure}
+
+\newpage
 \section{Diagramas de secuencia}

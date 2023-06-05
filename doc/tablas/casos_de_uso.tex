@@ -1,0 +1,348 @@
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Registrarse en la aplicación & CU-1 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Primario y esencial} \\
+        \hline
+        Referencias & RF-1 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{El usuario no está registrado
+        en la aplicación} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema habrá guardado la
+        información correspondiente al registro del usuario} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-1}
+    \label{tab:cu_1}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Iniciar sesión & CU-2 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Primario y esencial} \\
+        \hline
+        Referencias & RF-2 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{El usuario está registrado
+        en la aplicación} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema crea una sesión para
+        el usuario y reconoce que es ese usuario concreto el que está utilizando la aplicación} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-2}
+    \label{tab:cu_2}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Eliminar cuenta como usuario registrado & CU-3 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario registrado (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Primario y esencial} \\
+        \hline
+        Referencias & RF-3.1 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{El usuario está registrado
+        en la aplicación} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema elimina la información
+        correspondiente al usuario} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-3}
+    \label{tab:cu_3}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Eliminar cuenta como administrador & CU-4 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Administrador (principal)
+        y Usuario registrado (secundario)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Primario y esencial} \\
+        \hline
+        Referencias & RF-3.2 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{El usuario está registrado
+        en la aplicación} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema elimina la información
+        correspondiente al usuario} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-4}
+    \label{tab:cu_4}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Visitar galería de arte & CU-5 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Primario y esencial} \\
+        \hline
+        Referencias & RF-4 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{Ninguna} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{Se muestra el contenido
+        de la galería} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-5}
+    \label{tab:cu_5}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Subir obra & CU-6 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Artista (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Primario y esencial} \\
+        \hline
+        Referencias & RF-5 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{La obra se encuentra en
+        un formato soportado por la galería a la que se va a subir} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema guarda la información
+        correspondiente a la obra} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-6}
+    \label{tab:cu_6}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Mostrar detalles de obra & CU-7 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Primario y esencial} \\
+        \hline
+        Referencias & RF-6 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{La obra existe en la galería} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{Se muestra la información
+        correspondiente a la obra} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-7}
+    \label{tab:cu_7}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Valorar obra & CU-8 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario registrado (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Secundario y esencial} \\
+        \hline
+        Referencias & RF-7 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{La obra que se quiere valorar
+        existe en la galería} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema guarda la información
+        correspondiente a la valoración asociada a la obra} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-8}
+    \label{tab:cu_8}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Mostrar valoraciones de obra & CU-9 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Secundario y esencial} \\
+        \hline
+        Referencias & RF-8 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{La obra se encuentra
+        en la galería} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{Se muestra la información
+        correspondiente a las valoraciones asociadas a la obra en caso de haberlas} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-9}
+    \label{tab:cu_9}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Visualizar las obras de forma ordenada & CU-10 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Secundario y esencial} \\
+        \hline
+        Referencias & RF-9 y RF-10 & CU-5 \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{Se elige un orden para
+        la visualización de las obras} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{Se muestran las obras
+        ordenadas por el criterio elegido} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-10}
+    \label{tab:cu_10}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Visualizar las obras de un autor concreto & CU-11 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Secundario y esencial} \\
+        \hline
+        Referencias & RF-11 & CU-5 \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{Se elige un autor} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{Se muestran las obras
+        del autor elegido} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-11}
+    \label{tab:cu_11}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Eliminar obra como artista & CU-12 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Artista (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Secundario y esencial} \\
+        \hline
+        Referencias & RF-12.1 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{La obra existe en la galería
+        y el usuario es el autor de la obra} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema ya no posee
+        la información de la obra eliminada} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-12}
+    \label{tab:cu_12}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Eliminar obra como administrador & CU-13 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Administrador (principal)
+        y Artista (secundario)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Secundario y esencial} \\
+        \hline
+        Referencias & RF-12.2 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{La obra existe en la galería} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema ya no posee
+        la información de la obra eliminada} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-13}
+    \label{tab:cu_13}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Eliminar valoración como usuario registrado & CU-14 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario registrado (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Secundario y esencial} \\
+        \hline
+        Referencias & RF-13.1 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{La valoración existe en la obra
+        y el usuario es el autor de la valoración} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema ya no posee
+        la información de la valoración eliminada} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-14}
+    \label{tab:cu_14}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Eliminar valoración como administrador & CU-15 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Administrador (principal)
+        y Usuario registrado (secundario)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Secundario y esencial} \\
+        \hline
+        Referencias & RF-13.2 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{La valoración existe en la obra} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema ya no posee
+        la información de la valoración eliminada} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-15}
+    \label{tab:cu_15}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|p{3cm}|p{5cm}|p{2cm}|}
+        \hline
+        Caso de uso & Cerrar sesión & CU-16 \\
+        \hline
+        Actores & \multicolumn{2}{|p{7cm}|}{Usuario registrado (principal)} \\
+        \hline
+        Tipo & \multicolumn{2}{|p{7cm}|}{Primario y esencial} \\
+        \hline
+        Referencias & RF-14 & \multicolumn{1}{|c|}{-} \\
+        \hline
+        Precondición & \multicolumn{2}{|p{7cm}|}{El usuario ha iniciado sesión} \\
+        \hline
+        Postcondición & \multicolumn{2}{|p{7cm}|}{El sistema cierra la sesión
+        del usuario} \\
+        \hline
+    \end{tabular}
+    \caption{Definición del caso de uso CU-16}
+    \label{tab:cu_16}
+\end{table}

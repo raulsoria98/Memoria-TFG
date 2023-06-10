@@ -85,3 +85,32 @@ todas las tablas están en 3FN.
 \section{Diseño de interfaces de usuario}
 
 \section{Diseño de la arquitectura del sistema}
+A continuación se va a explicar la arquitecura del sistema utilizada.
+Para la creación de la aplicación web se va a utilizar el patrón
+Modelo-Vista-Controlador (MVC).
+
+\subsection{Modelo-Vista-Controlador}
+Este patrón de arquitectura se basa en separar la lógica de la aplicación
+en tres partes:
+
+\begin{itemize}
+    \item \textbf{Modelo}: El modelo representa la información con la que trabaja
+    la aplicación. En el caso de la aplicación que vamos a desarrollar, el modelo
+    será la base de datos y las funciones del backend que se encarguen de gestionarla.
+    \item \textbf{Vista}: La vista es la parte encargada de mostrar la información
+    al usuario y permitir que este interactúe con la aplicación. En el caso de la
+    aplicación que vamos a desarrollar, la vista será la parte del frontend.
+    \item \textbf{Controlador}: El controlador es el encargado de gestionar las
+    peticiones del usuario y realizar las acciones correspondientes. Es el enlace
+    entre la vista y el modelo. En nuestra aplicación el controlador será la parte
+    del backend que se encargue de gestionar las peticiones provenientes del frontend
+    y a través de una serie de funciones \textit{getters} y \textit{setters} se
+    pedirá y modificará la información del modelo.
+\end{itemize}
+
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=\textwidth]{diagramas/mvc}
+%   \caption{Modelo-Vista-Controlador}
+%   \label{fig:mvc}
+% \end{figure}

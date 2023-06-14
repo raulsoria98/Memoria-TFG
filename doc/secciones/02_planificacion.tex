@@ -1,4 +1,4 @@
-\chapter{Planificación}
+\chapter{Planificación y presupuesto}
 En este capítulo se va a realizar una planificación del TFG, en la que se
 va a explicar la metodología que será utilizada para el desarrollo del proyecto,
 se va a estimar el tiempo que se va a tardar en realizar cada tarea del proyecto
@@ -11,7 +11,30 @@ a este tipo de proyectos. Además, al ser un proyecto de una sola persona, no es
 necesario utilizar una metodología ágil y desde mi punto de vista entorpecería
 más el flujo de trabajo.
 
-No es necesario utilizar una metodología ágil porque no hay un equipo de
+Las fases de este tipo de metodologías, tal y como se explica en este artículo
+sobre metodologías de desarrollo de software \cite{metodologias}, son las siguientes:
+
+\begin{itemize}
+  \item \textbf{Análisis}: En esta fase se analiza el problema a resolver y se
+  definen los requisitos que debe cumplir la aplicación.
+  \item \textbf{Diseño}: En esta fase se diseña la base de datos, la arquitectura
+  del sistema y las interfaces de usuario.
+  \item \textbf{Implementación}: Esta es la fase en la que se desarrolla la
+  aplicación y se implementan las funcionalidades necesarias para satisfacer
+  los requisitos.
+  \item \textbf{Pruebas}: En la fase de pruebas se comprueba que la aplicación
+  cumple con los requisitos y que funciona correctamente.
+  \item \textbf{Mantenimiento}: La fase de mantenimiento es en la que se corrigen
+  los posibles errores que se encuentren en la aplicación y en la que se pueden
+  añadir nuevas funcionalidades a la misma.
+\end{itemize}
+
+Tal y como se explica en este otro artículo en el que se comparan las metodologías
+\cite{tradicionalesVSagiles}, las ágiles son más adecuadas para proyectos
+en los que se trabaja en equipo y se necesita una mayor flexibilidad durante el
+desarrollo porque los requisitos pueden cambiar.
+
+En nuestro caso, no es necesario utilizar una metodología ágil porque no hay un equipo de
 desarrollo que coordinar en daily meetings, las tareas se realizarán de forma secuencial.
 No hay un cliente o stakeholders que puedan cambiar los requisitos de forma
 continua, por lo que no es necesario realizar entregas periódicas en sprints como
@@ -44,27 +67,6 @@ faltan por hacer.
   \label{fig:trello}
 \end{figure}
 
-\section{Control de versiones}
-Para realizar un seguimiento del desarrollo de la aplicación se utilizará la
-herramienta de control de versiones \textit{Git} \cite{git}, que permite llevar un
-control de los cambios realizados en el código fuente de la aplicación. Además, estos
-cambios se irán subiendo a la plataforma \textit{GitHub} \cite{github}.
-
-Para seguir una estructura de los commits que se van realizando, se utilizará
-el mensaje de commit con el formato "\texttt{<stack>} - \texttt{<mensaje>}", donde \texttt{<stack>}
-es \textit{SERVER} o \textit{CLIENT} dependiendo de si el commit afecta al backend o
-al frontend de la aplicación, y \texttt{<mensaje>} es la descripción de los cambios que
-se han realizado.
-
-En la figura \ref{fig:commits} se puede ver un ejemplo de una captura sacada
-del listado de commits realizados en el repositorio de \textit{GitHub} \cite{github}.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{commits}
-  \caption{Ejemplo de mensajes de commit}
-  \label{fig:commits}
-\end{figure}
 
 \section{Temporización}
 En esta sección se mostrará a través de un diagrama de Gantt la planificación
@@ -74,6 +76,31 @@ herramienta \textit{Lucidchart} \cite{lucidchart}.
 En la figura \ref{fig:gantt} se muestra el diagrama de Gantt con el desglose de las
 tareas que se van a realizar, así como la duración de cada una de ellas en semanas.
 Los colores diferencian las etapas del desarrollo del proyecto.
+
+Como se puede ver en el diagrama, el proyecto se va a desarrollar en 16 semanas. La
+primera semana se dedicará a la planificación y especificación de los requisitos
+que tiene que cumplir la aplicación.
+
+La segunda, tercera y cuarta semana se dedicarán a la elaboración de los casos de uso
+y diagramas de secuencia, así como a la elección de las tecnologías que se van a
+utilizar para el desarrollo de la aplicación. Esta fase se ha estimado en 3 semanas
+ya que es una de las partes más importantes y, al tratarse de una metodología tradicional,
+es necesario tener bien definidos todos los requisitos y casos de uso de la aplicación.
+
+Después se ha planficado dejar tres semanas para la formación en las tecnologías que
+se van a utilizar para el desarrollo de la aplicación. Esto es orientativo y puede que
+durante el desarrollo de la aplicación surjan dudas o problemas que requieran más
+tiempo de formación.
+
+Para el desarrollo de la aplicación se ha estimado en unas siete semanas, comenzando
+con dos para el desarrollo del backend, otras dos de desarrollo conjunto del backend
+y comenzar con el desarrollo del frontend, y las últimas tres semanas para el desarrollo
+final del frontend.
+
+La fase de pruebas se irá realizando de forma continua y en paralelo al desarrollo
+de la aplicación, además de dedicar una última semana para las pruebas finales de
+la misma.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{gantt}

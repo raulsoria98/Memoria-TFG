@@ -76,11 +76,87 @@ Como comentan en este otro artículo \cite{vuejs-vs-react}, \textit{Vue.js} \cit
 también es una librería bastante sencilla y ligera, cuyos módulos se pueden ir añadiendo
 según se vayan necesitando. Sin embargo, se descartó esta opción porque, aunque
 \textit{Vue.js} \cite{vuejs} es más sencillo que \textit{React} \cite{react}, este
-último tiene mayor rendimiento y me llamaba más la atención y quería aprender a
+último tiene mayor rendimiento, además, me llamaba más la atención y quería aprender a
 utilizarlo.
 
 
 \section{Implementación de la base de datos}
+Para la implementación de la base de datos \textit{MySQL} \cite{mysql} se ha utilizado
+\textit{Sequelize} \cite{sequelize} que es un ORM (Object-Relational Mapping) para
+\textit{Node.js} \cite{nodejs} que permite trabajar con bases de datos relacionales
+como la que se ha utilizado en este proyecto.
+
+Tal y como se explica en este artículo \cite{orm} \textit{'Un ORM (Object Relational
+Mapping o Mapeo Objeto-Relacional en castellano) es una herramienta que nos permite mapear, o lo
+que es lo mismo, convertir los objetos de tu aplicación a un formato adecuado para ser
+almacenados en cualquier base de datos, creándo para ello una base de datos virtual
+donde los datos disponibles en nuestra aplicación quedan vinculados con la base de datos
+final.'}
+
+Con \textit{Sequelize} \cite{sequelize} se define la conexión a la base de datos como se
+puede ver en el código de la imágen \ref{fig:sequelize-db} correspondiente al archivo
+\texttt{config/db.js}. Creando un objeto \texttt{sequelize} que servirá para,
+posteriormente, realizar la conexión o definir los modelos de la base de datos. Como se
+puede ver, el nombre de la base de datos, el usuario, la contraseña, el host y el puerto
+se han definido en variables de entorno en un archivo \texttt{.env} para que no se vean
+reflejados en el código fuente y así evitar que se suban a \textit{GitHub} \cite{github}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/sequelize-db}
+  \caption{Definición de la conexión a la base de datos con \textit{Sequelize}}
+  \label{fig:sequelize-db}
+\end{figure}
+
+Una vez definida la conexión a la base de datos, se realiza la conexión con la misma
+mediante el método \texttt{authenticate()} como se puede ver en el código de la imágen
+\ref{fig:sequelize-connect} donde se define una función de conexión que se ejecuta
+cuando se inicia la aplicación.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/sequelize-connect}
+  \caption{Conexión a la base de datos con \textit{Sequelize}}
+  \label{fig:sequelize-connect}
+\end{figure}
+
+Para la definición de los modelos de la base de datos se ha seguido la documentación
+de \textit{Sequelize} \cite{sequelize-models} donde se explica cómo definir los modelos.
+En la aplicación se han creado los archivos correspondientes
+a cada modelo. Como por ejemplo el archivo \texttt{artwork.js}, cuyo código se puede ver
+en la imágen \ref{fig:artwork-model}, donde se define el modelo \texttt{Artwork} con sus
+atributos, validaciones y constraints.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{img/artwork-model}
+  \caption{Definición del modelo \texttt{Artwork}}
+  \label{fig:artwork-model}
+\end{figure}
+
+Para las relaciones entre los distintos modelos se han seguido las instrucciones
+de la documentación oficial \cite{sequelize-associations}. Se definen en una función
+\texttt{associateModels} que se ejecuta justo después de realizar la conexión a la base
+de datos. Como se puede ver en el código de la imágen \ref{fig:associate-models}, se
+define la relación uno a muchos entre el modelo \texttt{User} y el modelo \texttt{Artwork},
+la relación uno a uno entre el modelo \texttt{User} y el modelo \texttt{Rating} y la
+relación uno a muchos entre el modelo \texttt{Artwork} y el modelo \texttt{Rating}.
+
+También se puede ver que se definen las claves externas de cada relación y un alias para
+cada una de ellas. Esto permite realizar consultas que incluyan datos de los modelos
+relacionados de manera más sencilla.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/associate-models}
+  \caption{Definición de las relaciones entre los modelos}
+  \label{fig:associate-models}
+\end{figure}
+
+Para la gestión de la base de datos se ha utilizado \textit{PhpMyAdmin} \cite{phpmyadmin}
+que es una herramienta de administración de bases de datos basada en web, ofreciendo una
+interfaz gráfica desde la que poder ver y gestionar los datos de la aplicación por parte
+de los administradores.
 
 \section{Diagrama de clases}
 

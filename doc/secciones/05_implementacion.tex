@@ -159,5 +159,20 @@ interfaz gráfica desde la que poder ver y gestionar los datos de la aplicación
 de los administradores.
 
 \section{Diagrama de clases}
+A continuación, en la figura \ref{fig:class-diagram}, se observa el diagrama de clases
+de la aplicación. En él se pueden ver las tres clases de la aplicación: \texttt{users},
+\texttt{artworks} y \texttt{ratings}. En ellas se ven sus atributos y las relaciones
+entre ellas.
+
+Como se puede ver, la clase \texttt{users} tiene una relación uno a muchos
+con la clase \texttt{artworks} y la clase \texttt{ratings} tiene una relación muchos a
+uno con las clases \texttt{users} y \texttt{artworks}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{diagramas/diagrama_clases}
+  \caption{Diagrama de clases}
+  \label{fig:class-diagram}
+\end{figure}
 
 \section{Implementación de la aplicación}

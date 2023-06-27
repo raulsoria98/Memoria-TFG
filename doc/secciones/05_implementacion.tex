@@ -158,6 +158,11 @@ que es una herramienta de administración de bases de datos basada en web, ofrec
 interfaz gráfica desde la que poder ver y gestionar los datos de la aplicación por parte
 de los administradores.
 
+Todas las contraseñas almacenadas en la base de datos se han encriptado utilizando
+la librería \textit{bcrypt} \cite{bcrypt-nodejs} de \textit{Node.js} \cite{nodejs} que usa
+la función de hashing \textit{bcrypt} \cite{bcrypt} basada en el cifrado Blowfish que
+permite encriptar contraseñas de manera segura.
+
 \section{Diagrama de clases}
 A continuación, en la figura \ref{fig:class-diagram}, se observa el diagrama de clases
 de la aplicación. En él se pueden ver las tres clases de la aplicación: \texttt{users},
@@ -176,3 +181,208 @@ uno con las clases \texttt{users} y \texttt{artworks}.
 \end{figure}
 
 \section{Implementación de la aplicación}
+A continuación se van a explicar los puntos más importantes de la implementación de la
+aplicación, tanto en el backend como en el frontend.
+
+\subsection{Backend}
+El backend de la aplicación se ha desarrollado utilizando \textit{Node.js} \cite{nodejs}
+y \textit{Express} \cite{express}. Para crear el servidor de la aplicación se ha creado
+la aplicación de \textit{Express} como se muestra en el código de la imágen
+\ref{fig:express-app}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/express-app}
+  \caption{Creación de la aplicación de \textit{Express}}
+  \label{fig:express-app}
+\end{figure}
+
+En él se define en primer lugar la aplicación de \textit{Express} y se le añaden los
+middlewares necesarios, comenzando con el middleware \texttt{cors} \cite{express-cors}
+que permite que se puedan realizar peticiones a la API desde el frontend.
+
+A continuación se añade el middleware \texttt{express.json()} \cite{express-json}
+para que la aplicación pueda recibir datos en formato \texttt{JSON}.
+Después se añade el middleware de \texttt{express.urlencoded({ extended: true })}
+\cite{express-urlencoded} para que la aplicación pueda recibir datos en formato
+\texttt{string} o \texttt{array}.
+
+Después se añaden los routers de la aplicación \cite{express-router} que se encargan
+de gestionar las rutas de la API y llamar a las funciones correspondientes de los
+controladores. También se añade la ruta por defecto que devuelve un mensaje con el
+nombre de la API.
+
+Por último, se añaden un par de middlewares más para gestionar los errores que se
+puedan producir en la aplicación. Uno se encarga de mostrarlos por consola y el otro
+de devolverlos en formato \texttt{JSON} y con su código de error correspondiente.
+
+\subsubsection{Rutas}
+Como se ha comentado anteriormente, los routers se encargan de gestionar las rutas
+de la API y llamar a las funciones correspondientes de los controladores. Son
+middlewares que agrupan rutas que tienen algo en común. En este caso, se han creado
+routers para agrupar las rutas de autenticación, de los usuarios, las obras de arte
+y las rutas que son para los administradores.
+
+Como ejemplo, se puede ver el código del router de autenticación en la imágen
+\ref{fig:auth-router}. En él se definen las rutas de autenticación, que son las de
+inicio de sesión y registro, ambas peticiones son de tipo \texttt{POST} \cite{post-request}.
+El primer parámetro que se le pasa a la función \texttt{post} de \textit{Express}
+es el \texttt{path} o ruta de la petición, como se explica en la documentación
+\cite{express-router}. Los siguientes parámetros son los diferentes middlewares que
+se van a ejecutar para esa ruta. En este caso, ambas rutas ejecutan en primer lugar
+un middleware de validación de los datos que llegan con la petición (estos middlewares
+se explicarán más adelante, en la sección \ref{sssec:DTOs}). A continuación, se ejecuta
+la función del controlador de autenticación correspondiente a la ruta.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/auth-router}
+  \caption{Router de autenticación}
+  \label{fig:auth-router}
+\end{figure}
+
+\subsubsection{Controladores}
+Los controladores son los encargados de realizar las funciones que se ejecutan al
+realizar una petición a la API. En el caso de esta aplicación, se han creado
+controladores para la autenticación, los usuarios, las obras de arte y los administradores,
+cada uno con sus funciones correspondientes. Estas funciones son en realidad middlewares
+que se encargan de realizar las acciones necesarias para cada petición.
+
+Un middleware es una función que, como se explica en la documentación de \textit{Express}
+\cite{express-middleware}, recibe por parámetros tres objetos:
+
+\begin{itemize}
+  \item \texttt{req}: objeto de petición (\textit{request}) que contiene la información
+  de la petición HTTP.
+  \item \texttt{res}: objeto de respuesta (\textit{response}) que contiene la información
+  de la respuesta HTTP que se va a enviar.
+  \item \texttt{next}: función que, al ejecutarse, ejecuta el siguiente middleware que se
+  haya definido para esa ruta, ya que para una ruta se pueden ejecutar varios middlewares.
+\end{itemize}
+
+La nomenclatura utilizada para definir los distintos middlewares de los controladores es
+la siguiente: \texttt{<tipoRequest><NombreFuncion>}. Donde \texttt{<tipoRequest>} es el
+tipo de petición HTTP que se recibe (\texttt{GET}, \texttt{POST}, \texttt{PUT} o
+\texttt{DELETE}) y \texttt{<NombreFuncion>} es el nombre de la función. Por ejemplo,
+la función que se encarga de realizar el inicio de sesión de un usuario se llama
+\texttt{postLogin} ya que es una petición \texttt{POST}. Todo esto se puede ver en la
+imágen \ref{fig:auth-controller} donde se muestra el código del controlador de
+autenticación.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/auth-controller}
+  \caption{Controlador de autenticación}
+  \label{fig:auth-controller}
+\end{figure}
+
+En estas funciones podemos ver cómo en primer lugar se obtienen los datos del body de
+la petición y no hace falta comprobar si existen o son correctos ya que de eso se ha
+encargado el middleware de DTO (Data Transfer Object), que habíamos mencionado al hablar
+de las rutas, y cuya ejecución es anterior al de la función del controlador.
+
+A continuación, se ejecuta el código que corresponda y se devuelve una respuesta haciendo
+uso del objeto \texttt{res} e indicando el código de estado de la respuesta HTTP y el JSON
+que se va a devolver.
+
+El código de la función se ejecuta dentro de un bloque \texttt{try/catch} para capturar
+los posibles errores que se puedan producir y, con la función \texttt{next()}, se envían
+dichos errores a los middlewares que se encargan de manejar los errores (son los dos últimos
+middlewares que se pueden ver en la imágen de la app de \textit{Express}
+\ref{fig:express-app}). Estos middlewares se encargan de devolver los errores en formato
+JSON y con el código de error correspondiente, manteniendo siempre la mismaestructura de
+respuesta. Este manejo de errores es el que se propone en la documentación de \textit{Express}
+\cite{express-error-handling}.
+
+\subsubsection{DTOs} \label{sssec:DTOs}
+Un DTO (Data Transfer Object) es un objeto que se utiliza para transferir datos entre
+diferentes capas de una aplicación. Tal y como se explica en este artículo \cite{dto-validation},
+los DTOs son una buena práctica para validar los datos que llegan en el body de una petición
+HTTP.
+
+Para el desarrollo de esta aplicación se ha utilizado la librería \textit{Ajv} \cite{ajv}
+que permite definir un esquema de validación de los datos que llegan en el body de una
+petición HTTP, pudiendo definir los tipos de datos que se esperan, si son obligatorios o
+no y algunas validaciones adicionales como el tamaño de un string, si es un email válido,
+si cumple una regex o si el valor del dato está en un enumerado, entre otras.
+
+En la imágen \ref{fig:password-dto} se puede ver la definición de la propiedad
+\texttt{password} del DTO de inicio de sesión y registro de usuarios. En ella se puede
+ver que se espera un string, que es obligatorio y que tiene que tener una longitud mínima
+de 6 caracteres, una longitud máxima de 50 caracteres y que tiene que cumplir una regex
+que comprueba que la contraseña tenga al menos una letra minúsucula, una letra mayúscula y
+un número. También se puede ver que se han definido mensajes de error personalizados para
+cada una de las validaciones.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/password-dto}
+  \caption{Definición de la propiedad \texttt{password} del DTO de inicio de sesión y registro}
+  \label{fig:password-dto}
+\end{figure}
+
+Los esquemas de validación DTO se generan con una función auxiliar que se ha creado con este
+propósito y se compila con la función \texttt{ajv.compile()} de la librería \textit{Ajv}
+\cite{ajv-methods}. Con este esquema se crea un middleware que se ejecuta antes de las
+funciones de los controladores y que se encarga de validar los datos que llegan en el body
+de la request. Si los datos no son válidos, se devuelve un error con los mensajes de error
+definidos en el esquema de validación correspondiente. Un ejemplo de esto se puede ver en
+la imágen \ref{fig:auth-router} donde podemos ver los middlewares \texttt{validateLoginDTO}
+y \texttt{validateSignUpDTO} que se ejecutan antes de las funciones \texttt{postLogin} y
+\texttt{postSignUp} respectivamente.
+
+\newpage
+
+\subsubsection{Autenticación}
+Para la autenticación de los usuarios en la aplicación se ha utilizado \textit{JWT}
+\cite{jwt} que es un estándar basado en objetos \textit{JSON} para poder transmitir
+información de forma segura y firmada digitalmente a través de un token. Se barajó la
+opción de utilizar una autenticación basada en sesiones, pero se descartó porque
+la autenticación mediante token es más segura y sencilla de implementar, como se
+explica en este artículo \cite{token-vs-session}.
+
+Para el manejo de los tokens se ha utilizado el módulo \textit{jose} \cite{jose} que
+permite generar y verificar tokens \textit{JWT} \cite{jwt} mediante una serie de funciones.
+
+Dado que junto con el token se puede enviar información encriptada para que el cliente
+pueda acceder a ella, se ha decidido enviar el \textbf{id del usuario} y su \textbf{rol}.
+Esto permite que desde el frontend se pueda saber de manera sencilla si el usuario está
+autenticado y qué acciones puede realizar en la aplicación.
+
+Para la firma del token se ha utilizado un \textit{secret} que se ha definido en una
+variable de entorno en el \texttt{.env}. Este \textit{secret} se utiliza para verificar
+que el token es válido y que no ha sido modificado. Todo este proceso se explica en la
+documentación \cite{jose-sign}, donde se enseña también a encriptar con diferentes
+algoritmos. En este caso se ha utilizado el algoritmo \texttt{HS256}. Además se ha
+definido un tiempo de expiración del token de \textbf{8 horas}, tiempo tras el cual
+el token dejará de ser válido y el usuario tendrá que volver a iniciar sesión.
+
+Desde el frontend, cada vez que se realiza una petición a la API (que deba estar
+autenticada), se envía el token en la cabecera de la petición siguiendo el estándar
+\textit{Bearer} \cite{bearer}. Este token se verificará en el backend y, si es válido,
+se ejecutará la función correspondiente de la petición, en caso contrario, se devolverá
+un error de autenticación.
+
+Para la autenticación de los usuarios se ha creado un middleware que se ejecuta antes
+de las funciones de los controladores y que se encarga de verificar que el token que
+llega en la cabecera de la petición es válido, utilizando la función \texttt{jwtVerify()}
+\cite{jose-verify} de \textit{jose}.
+
+Este middleware se puede ver en la imágen \ref{fig:auth-middleware}. En caso de que el
+token sea válido, se obtiene el id del usuario y se añade al objeto \texttt{req}, después
+se ejecuta la función \texttt{next()} para que se ejecute la función del controlador
+correspondiente a la petición, donde se podrá acceder al id del usuario que se acaba de
+almacenar en \texttt{req}. Si el token no se válido se envía el error de autenticación
+con la función \texttt{next()} para que se ejecuten los middlewares de manejo de errores
+explicados anteriormente.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/auth-middleware}
+  \caption{Middleware de autenticación}
+  \label{fig:auth-middleware}
+\end{figure}
+
+\subsection{Frontend}
+El frontend de la aplicación se ha desarrollado utilizando \textit{React} \cite{react}
+y algunos componentes de \textit{Material-UI} \cite{material-ui}.

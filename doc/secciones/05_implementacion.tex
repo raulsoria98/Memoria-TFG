@@ -384,5 +384,89 @@ explicados anteriormente.
 \end{figure}
 
 \subsection{Frontend}
+
 El frontend de la aplicación se ha desarrollado utilizando \textit{React} \cite{react}
 y algunos componentes de \textit{Material-UI} \cite{material-ui}.
+
+La aplicación de \textit{React} \cite{react} consta de un archivo \texttt{index.html}
+que es el punto de entrada de la aplicación y donde se encuentra el elemento
+\texttt{<div id=``root''></div>} en el cual se va a renderizar la aplicación. A nivel de
+\textit{JavaScript} se tiene un archivo \texttt{main.jsx} que es el archivo desde el que
+se inicia la aplicación y donde, a través del react-dom, se optiene el elemento
+\texttt{<div id=``root''></div>} mencionado anteriormente y en él se renderiza el componente
+\texttt{App} que es el componente principal de la aplicación.
+
+\subsubsection{Vite}
+
+Para hacer el frontend de la aplicación se ha creado un proyecto nuevo usando
+\textit{Vite} \cite{vite} que es una herramienta que facilita el desarrollo del frontend
+de aplicaciones web. Consta de un servidor de desarrollo para poder ir viendo los cambios
+que se van realizando en la aplicación en tiempo real y de un \textit{bundler} que se
+encarga de compilar el código con todas sus dependencias.
+
+Se ha utilizado \textit{Vite} \cite{vite} en lugar de \textit{Create React App}
+\cite{create-react-app}, que era la herramienta que se utilizaba anteriormente por defecto
+para crear proyectos de \textit{React} \cite{react}, porque es más rápido y por su
+manejo de las dependencias. Además, en la documentación oficial de \textit{React}
+\cite{start-react-project} ahora recomienda utilizar \textit{Vite} \cite{vite} para crear
+nuevos proyectos si no vamos a utilizar un framework completo.
+
+En las imágenes \ref{fig:vite-bundle} y \ref{fig:vite-esm} \cite{why-vite} se puede ver la
+diferencia entre lo que se hace tradicionalmente con \textit{bundlers} para el desarrollo y
+lo que hace \textit{Vite} \cite{vite}, que es utilizar el sistema de módulos de JavaScript
+(\textit{ESM}) \cite{esm} para importar los módulos dinámicamente en el navegador. Esto
+agiliza mucho el proceso de desarrollo evitando tener que compilar el código cada vez que
+se realiza un cambio.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/bundle-based}
+  \caption{Proceso de desarrollo con \textit{bundlers}}
+  \label{fig:vite-bundle}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/esm-based}
+  \caption{Proceso de desarrollo con \textit{ESM}}
+  \label{fig:vite-esm}
+\end{figure}
+
+Se ha utilizado también \textit{SWC} \cite{swc} que es un compilador de JavaScript y
+TypeScript que es más rápido que \textit{Babel} \cite{babel} y que se integra con
+\textit{Vite} \cite{vite} con un plugin que han desarrollado \cite{vite-swc}, afirmando
+que es hasta 20 veces más rápido que \textit{Babel} \cite{babel}.
+
+\subsubsection{Rutas}
+Para gestionar las rutas de la aplicación se ha utilizado \textit{React Router}
+\cite{react-router} que es la librería más utilizada para este propósito.
+
+Se ha usado el componente \texttt{BrowserRouter} y se ha seguido la documentación
+\cite{browser-router} para definir las rutas de la aplicación. En la imágen
+\ref{fig:app} se puede ver el componente \texttt{App} que es el componente principal
+de la aplicación y donde se definen las rutas de la misma.
+
+Como se puede observar, se define el \texttt{AuthProvider} (que se explicará más adelante)
+y dentro de él se define el componente \texttt{Routes} que es el que se encarga de
+definir las rutas de la aplicación.
+
+La primera ruta tiene \texttt{path='/'}, que es la ruta raíz por lo que todas las rutas
+renderizarán el componente que se le pasa como valor a la prop \texttt{element}, el
+componente \texttt{Layout}. Este componente es el que tiene la estructura principal de la
+aplicación, que tiene que estar presente en todas las páginas. Consta de un \texttt{header}
+con la barra de navegación y un \texttt{main} donde se renderiza el componente
+\texttt{Outlet} \cite{outlet} que se encarga de renderizar el \texttt{element}
+correspondiente a la ruta hija que se esté visitando.
+
+La última ruta, con \texttt{path='*'}, es la ruta por defecto que se renderiza cuando
+no se encuentra ninguna otra ruta que conicida con la ruta que se está visitando en la
+aplicación.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/app}
+  \caption{Componente \texttt{App}}
+  \label{fig:app}
+\end{figure}
+
+\subsubsection{Contexto de autenticación}

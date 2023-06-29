@@ -333,7 +333,7 @@ y \texttt{validateSignUpDTO} que se ejecutan antes de las funciones \texttt{post
 
 \newpage
 
-\subsubsection{Autenticación}
+\subsubsection{Autenticación} \label{sssec:auth}
 Para la autenticación de los usuarios en la aplicación se ha utilizado \textit{JWT}
 \cite{jwt} que es un estándar basado en objetos \textit{JSON} para poder transmitir
 información de forma segura y firmada digitalmente a través de un token. Se barajó la
@@ -510,6 +510,14 @@ Para manejar la lógica de los componentes se han utilizado los \textbf{estados}
 mantienen entre renderizados y que, al ser modificados, hacen que el componente se
 vuelva a renderizar, permitiendo así que se actualice la interfaz de usuario.
 
+\subsubsection{Estilos}
+Para los estilos de la aplicación se han escrito en \textit{SCSS} \cite{scss} y se han
+utilizado algunos componentes de \textit{Material-UI} \cite{material-ui} como, por ejemplo,
+el componente \texttt{Rating} \cite{rating} para mostrar las valoraciones de las obras o
+el componente \texttt{Modal} \cite{modal} que se utiliza para mostrar los detalles de una
+obra de arte de la galería. Además, este último componente se ha anidado dentro de otro
+\texttt{Modal} para mostrar todas las valoraciones y comentarios de una obra de arte.
+
 \subsubsection{Hooks}
 Los \textbf{hooks} son una característica de \textit{React} \cite{react-hooks} que
 permite usar distintas funciones de \textit{React} \cite{react} en los componentes.
@@ -534,4 +542,44 @@ encargada de limpiar los errores del estado.
   \includegraphics[width=\textwidth]{img/use-errors}
   \caption{Hook \texttt{useErrors}}
   \label{fig:use-errors}
+\end{figure}
+
+\subsubsection{Servicios}
+Para realizar las peticiones \texttt{HTTP} a la API se han creado unos servicios que
+se encargan de esta labor. Se han creado tres servicios, uno para las peticiones relacionadas
+con la autenticación, otro para las peticiones relacionadas con los usuarios y otro para
+las relacionadas con las obras de arte.
+
+Las peticiones se realizan mediante la librería \textit{Axios} \cite{axios} que permite
+realizar peticiones \texttt{HTTP} de manera sencilla. La configuración de \textit{Axios}
+\cite{axios} es muy sencilla, simplemente se crea una instancia indicando la \texttt{baseURL}
+de la API. Esto se ha realizado en un archivo de configuración \texttt{axios.js} que devuelve
+la instancia del cliente de \textit{Axios} \cite{axios} evitando así tener que crear una
+instancia en cada servicio.
+
+La instancia de \textit{Axios} \cite{axios} cuenta con los métodos \texttt{get},
+\texttt{post}, \texttt{put} y \texttt{delete} que son los que se utilizan para realizar
+las peticiones \texttt{HTTP} a la API. A estos métodos hay que pasarles como primer
+parámetro la ruta de la petición, como segundo parámetro los datos que se quieran enviar
+en el body de la petición (en caso de que sea necesario) y el últmo parámetro es un objeto
+con la configuración de la petición como, por ejemplo, los \textit{headers}.
+
+En la imágen \ref{fig:create-artwork-service} se puede ver la función \texttt{createArtwork}
+del servicio de obras de arte que se encarga de realizar una petición \texttt{POST} a la API
+para crear una obra de arte. En ella se puede ver que la función recibe como parámetro un
+objeto con los datos de la obra de arte y el token de autenticación del usuario. Se utiliza
+el método \texttt{post} de la instancia de \texttt{axiosClient} pasándole como primer
+parámetro la ruta de la petición, como segundo los datos con los que se quiere crear la obra
+de arte y como tercer parámetro los \textit{headers} de la petición, que en este caso son
+el \textit{header} de \texttt{Authorization} con el token en el formato \texttt{Bearer}, tal
+y como se explicó en la sección \ref{sssec:auth}; y el \textit{header} de
+\texttt{'Content-Type': 'multipart/form-data'} que es el que se recomienda cuando se envían
+datos con archivos, como es el caso de las obras de arte \cite{multipart-form-data}. Por
+último, se devuelve la respuesta de la petición.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{img/create-artwork-service}
+  \caption{Función \texttt{createArtwork}}
+  \label{fig:create-artwork-service}
 \end{figure}

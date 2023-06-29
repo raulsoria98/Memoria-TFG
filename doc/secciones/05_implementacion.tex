@@ -583,3 +583,38 @@ datos con archivos, como es el caso de las obras de arte \cite{multipart-form-da
   \caption{Función \texttt{createArtwork}}
   \label{fig:create-artwork-service}
 \end{figure}
+
+\subsection{Despliegue}
+Para el despliegue y conexión de todas las partes de la aplicación se ha utilizado
+\textit{Docker} \cite{docker} que es una plataforma que permite crear, desplegar y ejecutar
+aplicaciones dentro de contenedores. Estos contenedores son un \textbf{entorno de
+virtualización} ligero y aislado que permite ejecutar aplicaciones independientemente del
+sistema operativo en el que se ejecute. A diferencia de una máquina virtual, los contenedores
+no necesitan un sistema operativo virtualizado para funcionar, sino que utilizan los recursos
+del sistema operativo del host y solamente virtualizan los componentes necesarios para
+ejecutar la aplicación y sus dependencias. Estos contenedores son \textbf{independientes del
+sistema operativo} y entre ellos, por lo que podemos evitar así problemas de dependencias o
+conflictos entre aplicaciones aunque se ejecuten en el mismo host.
+
+Para el despliegue de la aplicación se ha utilizado \textit{Docker Compose}
+\cite{docker-compose} que permite definir y ejecutar multiples contenedores de \textit{Docker}
+\cite{docker}. En el caso de esta aplicación, se han definido cuatro contenedores: uno para
+la base de datos, otro para \textit{PhpMyAdmin} \cite{phpmyadmin}, otro para el backend y
+otro para el frontend.
+
+Tanto el backend como el frontend se han definido con un \textit{Dockerfile} \cite{dockerfile}
+que es un archivo que contiene instrucciones para crear una \textit{imagen} de \textit{Docker}
+para crear el contenedor. En ambos, se ha utilizado como base la \textit{imagen} oficial
+de \textit{Node.js} \cite{nodejs-docker} en su versión \texttt{18-alpine} que está basada en
+\textit{Alpine Linux} \cite{alpine-linux} (una distribución muy ligera de Linux). Además,
+en estos \textit{Dockerfiles} se copian los archivos necesarios del host de la aplicación al
+contenedor y se instalan las dependencias de la aplicación con el comando \texttt{npm install}
+de \textit{npm} \cite{npm}.
+
+La base de datos se ha definido directamente en el \textit{docker-compose.yml} usando la
+\textit{imagen} oficial de \textit{MySQL} \cite{mysql-docker} en su versión \texttt{8.0}
+y definiendo las variables de entorno necesarias para la configuración de la misma.
+
+Para el gestor de base de datos se ha utilizado la \textit{imagen} oficial de
+\textit{PhpMyAdmin} \cite{phpmyadmin-docker} en su última versión y también se han definido
+las variables de entorno necesarias para su conexión con la base de datos.

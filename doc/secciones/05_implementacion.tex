@@ -469,4 +469,69 @@ aplicación.
   \label{fig:app}
 \end{figure}
 
-\subsubsection{Contexto de autenticación}
+\subsubsection{Contexto de autenticación} \label{sssec:AuthContext}
+Para gestionar la autenticación de los usuarios en el frontend se ha utilizado el
+\textit{hook} \texttt{useContext} \cite{use-context} de \textit{React} \cite{react},
+que permite suscribirse a un contexto previamente definido y acceder a él desde cualquier
+componente hijo de dicho contexto.
+
+Para esto se ha definido el contexto \texttt{AuthContext} con la función
+\texttt{createContext} \cite{create-context} de \textit{React} \cite{react} y se ha creado
+un componente \texttt{AuthProvider} que es el que se encarga de gestionar el estado de la
+autenticación de los usuarios. Este es el que se puede ver en la imágen \ref{fig:app}
+englobando al resto de componentes de la aplicación. Esto permite que este contexto esté
+disponible en toda la aplicación.
+
+En el componente \texttt{AuthProvider} se definen los estados \texttt{user} y
+\texttt{token} que son los que se van a utilizar para guardar la información de
+autenticación del usuario, en caso de ser nulos, significa que el usuario no está
+autenticado. También se definen las funciones \texttt{setAuth} y \texttt{deleteAuth} que
+se encargan de guardar y eliminar la información de autenticación del usuario en el
+\textit{localStorage} \cite{local-storage} del navegador.
+
+\subsubsection{Componentes}
+Los \textbf{componentes} son la base que utiliza \textit{React} \cite{react} para
+la construir las interfaces de usuario \cite{react-component}. Los componentes son como
+funciones que engloban el marcado \textit{HTML}, los estilos \textit{CSS} y la lógica
+\textit{JavaScript} de una parte concreta de la interfaz de usuario. Los componentes
+devuelven un código \textit{JSX} \cite{jsx} muy similar al \textit{HTML} y es el que
+se renderiza en el navegador. Los componentes pueden tener propiedades que se pasan
+como parámetros desde el componente padre.
+
+En la aplicación se han creado algunos \textbf{componentes} en la carpeta \texttt{pages}
+que son los que se renderizan al visitar una ruta de la aplicación. Estos componentes
+suelen ser componentes padres que engloban a otros componentes más pequeños que se
+encargan de renderizar partes más concretas de la página. Estos componentes más pequeños
+se han creado en la carpeta \texttt{components} y también pueden tener componentes hijos
+que se renderizan dentro de ellos.
+
+Para manejar la lógica de los componentes se han utilizado los \textbf{estados} de
+\textit{React} \cite{react-state} que son como variables de los componentes que se
+mantienen entre renderizados y que, al ser modificados, hacen que el componente se
+vuelva a renderizar, permitiendo así que se actualice la interfaz de usuario.
+
+\subsubsection{Hooks}
+Los \textbf{hooks} son una característica de \textit{React} \cite{react-hooks} que
+permite usar distintas funciones de \textit{React} \cite{react} en los componentes.
+Por ejemplo el \textit{hook} \texttt{useState} \cite{use-state} para manejar los
+\textit{estados} de los que se ha hablado anteriormente o el \textit{hook}
+\texttt{useContext} \cite{use-context} para poder acceder a un contexto como se ha
+explicado en la sección anterior, sobre el contexto de autenticación \ref{sssec:AuthContext}.
+
+Además, \textit{React} \cite{react} permite crear \textbf{hooks personalizados} que
+llaman \textbf{custom hooks} \cite{custom-hooks}. Estos permiten encapsular una lógica
+que se vaya a utilizar en varios componentes. En la aplicación se han creado algunos
+\textbf{custom hooks} como el hook \texttt{useAuth} que se encarga de obtener la
+información de autenticación del usuario del contexto de autenticación o el hook
+\texttt{useErrors} que se encarga de gestionar los errores que se pueden producir en los
+componentes. Este último se muestra en la imágen \ref{fig:use-errors} donde se puede ver
+que se define un estado \texttt{errors} para almacenar los errores y dos funciones:
+\texttt{saveErrors} que se encarga de guardar los errores en el estado y \texttt{clearErrors},
+encargada de limpiar los errores del estado.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/use-errors}
+  \caption{Hook \texttt{useErrors}}
+  \label{fig:use-errors}
+\end{figure}

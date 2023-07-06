@@ -11,6 +11,17 @@ Comenzaremos con el modelo entidad-relación y terminaremos con el paso a
 tablas y la normalización.
 
 \subsection{Modelo Entidad-Relación}
+En nuestro caso, la base de datos va a estar formada por las siguientes
+entidades:
+
+\begin{itemize}
+    \item \textbf{Usuario}: Esta entidad representa a los usuarios de la aplicación.
+    \item \textbf{Artista}: Esta entidad representa a los artistas de la aplicación.
+    \item \textbf{ObraDeArte}: Esta entidad representa a las obras de arte de la aplicación.
+    \item \textbf{Valoración}: Esta entidad representa a las valoraciones de las obras de
+    arte que realizan los usuarios.
+\end{itemize}
+
 En la figura \ref{fig:e-r} se muestra el modelo entidad-relación de la base de
 datos. En dicho modelo se encuentran las entidades con sus atributos y las
 relaciones entre ellas.
@@ -53,7 +64,7 @@ y por último las relaciones.
 Ahora se va a proceder a fusionar las tablas que sean posibles. Además,
 dado que la tabla \texttt{Artista} no tiene atributos propios y solamente tiene
 una clave externa que es clave primaria en la tabla \texttt{Usuario} (que es la
-tabla padre) , se puede fusionar con dicha tabla, añadiendo a esta una columna
+tabla padre), se puede fusionar con dicha tabla, añadiendo a esta una columna
 que indique si el usuario es artista o no, será el atributo \texttt{Rol}.
 
 \begin{enumerate}

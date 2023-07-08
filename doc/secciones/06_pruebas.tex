@@ -1,1 +1,28 @@
 \chapter{Pruebas}
+
+{ \setlength{\parskip}{6mm} % Customize the space between paragraphs
+Las pruebas de la aplicación se han realizado a lo largo del desarrollo de la misma. Se ha
+ido probando cada funcionalidad conforme se iba implementando.
+
+Durante el proceso de implementación había funcionalidades que se probaron y no se
+encontró ningún error, pero cuando se terminó de implementar la aplicación y se volvieron
+a probar todas las funcionalidades y casos de uso de la aplicación, se encontraron errores
+que no se habían detectado anteriormente.
+
+Un ejemplo de esto es el caso de uso de subir una obra de arte. Cuando se implementó
+esta funcionalidad se probó y no se encontró ningún error, pero cuando se terminó de
+implementar la aplicación y se volvió a probar, se encontró el error. La descripción
+de la obra tenía un límite de 500 caracteres en las comprobaciones que se hacían mediante
+el sistema de DTO, pero en base de datos, este límite era de 200 caracteres. Esto provocaba
+que si se introducía una descripción de más de 200 caracteres, saltase un error de la base de
+datos en lugar de un error personalizado de la aplicación.
+
+Se han realizado las pruebas de todas las funcionalidades tanto conforme se iban
+implementando como al finalizar la implementación de la aplicación y en la fase de
+implementación sí es cierto que se encontraron bastantes errores que se fueron corrigiendo,
+pero en la fase final de pruebas, estaba todo más depurado y se encontraron menos errores.
+
+En un futuro, si la aplicación se sigue desarrollando y se lanza a producción, se deberían
+realizar pruebas unitarias y de integración para asegurar que la aplicación funciona
+correctamente y que no se introducen errores al realizar cambios en el código.
+}

@@ -93,7 +93,81 @@ En nuestro caso, todas las tablas están en 2FN y además todos los atributos
 dependen de la clave primaria y no de otros atributos no-clave, por lo que
 todas las tablas están en 3FN.
 
+\newpage
+
 \section{Diseño de interfaces de usuario}
+En esta sección se va a realizar el diseño de las interfaces de usuario, para
+ello se van a realizar bocetos de las mismas. Estos bocetos se han realizado
+utilizando la herramienta \textit{Sketchbook} \cite{sketchbook}.
+
+\subsection{Bocetos}
+El primer boceto que se va a realizar es el de la interfaz de inicio de sesión
+\ref{fig:boceto-iniciar-sesion}. Cumpliendo así con el requisito funcional
+\hyperref[tab:rf-2]{\textbf{RF-2}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/iniciar-sesion}
+  \caption{Boceto de la interfaz de inicio de sesión}
+  \label{fig:boceto-iniciar-sesion}
+\end{figure}
+
+El siguiente boceto que se va a realizar es el de la interfaz de registro
+\ref{fig:boceto-registro}. Cumpliendo así con los requisitos funcionales
+\hyperref[tab:rf-1-1]{\textbf{RF-1.1}} y \hyperref[tab:rf-1-2]{\textbf{RF-1.2}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/registrarse}
+  \caption{Boceto de la interfaz de registro}
+  \label{fig:boceto-registro}
+\end{figure}
+
+A continuación, se va a realizar el boceto de la interfaz de una galería de arte
+\ref{fig:boceto-galeria}. Cumpliendo así con el requisito funcional
+\hyperref[tab:rf-4]{\textbf{RF-4}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/galeria}
+  \caption{Boceto de la interfaz de una galería de arte}
+  \label{fig:boceto-galeria}
+\end{figure}
+
+El siguiente boceto que se va a realizar es el de el modal con los detalles de una obra de
+arte \ref{fig:boceto-obra}, donde también se puede valorar la misma. Cumpliendo así con el
+requisito funcional \hyperref[tab:rf-6]{\textbf{RF-6}} referido a mostrar los detalles de una
+obra de arte y con el requisito funcional \hyperref[tab:rf-7]{\textbf{RF-7}} referido a
+valorar una obra.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/modal}
+  \caption{Boceto del modal con los detalles de una obra de arte}
+  \label{fig:boceto-obra}
+\end{figure}
+
+Proseguimos con el boceto del modal de valoraciones de una obra de arte
+\ref{fig:boceto-valoraciones}. Cumpliendo así con el requisito funcional
+\hyperref[tab:rf-8]{\textbf{RF-8}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/valoraciones}
+  \caption{Boceto del modal de valoraciones de una obra de arte}
+  \label{fig:boceto-valoraciones}
+\end{figure}
+
+Por último, se va a realizar el boceto de la pantalla de la que disponen los artistas para
+subir sus obras de arte \ref{fig:boceto-subir-obra}. Cumpliendo así con el requisito
+funcional \hyperref[tab:rf-5]{\textbf{RF-5}}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/subir-obra}
+  \caption{Boceto de la pantalla de subir obra}
+  \label{fig:boceto-subir-obra}
+\end{figure}
 
 \section{Diseño de la arquitectura del sistema}
 A continuación se va a explicar la arquitecura del sistema utilizada.
@@ -122,7 +196,7 @@ en separar la lógica de la aplicación en tres partes:
 En la figura \ref{fig:mvc} se muestra un diagrama de la arquitectura MVC de la
 aplicación.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{diagramas/mvc}
   \caption{Modelo-Vista-Controlador}

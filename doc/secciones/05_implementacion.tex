@@ -163,6 +163,8 @@ la librería \textit{bcrypt} \cite{bcrypt-nodejs} de \textit{Node.js} \cite{node
 la función de hashing \textit{bcrypt} \cite{bcrypt} basada en el cifrado Blowfish que
 permite encriptar contraseñas de manera segura.
 
+\newpage
+
 \section{Diagrama de clases}
 A continuación, en la figura \ref{fig:class-diagram}, se observa el diagrama de clases
 de la aplicación. En él se pueden ver las tres clases de la aplicación: \texttt{users},
@@ -179,6 +181,8 @@ uno con las clases \texttt{users} y \texttt{artworks}.
   \caption{Diagrama de clases}
   \label{fig:class-diagram}
 \end{figure}
+
+\newpage
 
 \section{Implementación de la aplicación}
 A continuación se van a explicar los puntos más importantes de la implementación de la
@@ -314,7 +318,7 @@ que comprueba que la contraseña tenga al menos una letra minúsucula, una letra
 un número. También se puede ver que se han definido mensajes de error personalizados para
 cada una de las validaciones.
 
-\begin{figure}[H]
+\begin{figure}[h]
   \centering
   \includegraphics[width=1\textwidth]{img/password-dto}
   \caption{Definición de la propiedad \texttt{password} del DTO de inicio de sesión y registro}
@@ -378,7 +382,7 @@ explicados anteriormente.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1\textwidth]{img/auth-middleware}
+  \includegraphics[width=0.8\textwidth]{img/auth-middleware}
   \caption{Middleware de autenticación}
   \label{fig:auth-middleware}
 \end{figure}
@@ -462,12 +466,16 @@ La última ruta, con \texttt{path='*'}, es la ruta por defecto que se renderiza 
 no se encuentra ninguna otra ruta que conicida con la ruta que se está visitando en la
 aplicación.
 
+\newpage
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{img/app}
   \caption{Componente \texttt{App}}
   \label{fig:app}
 \end{figure}
+
+\newpage
 
 \subsubsection{Contexto de autenticación} \label{sssec:AuthContext}
 Para gestionar la autenticación de los usuarios en el frontend se ha utilizado el
@@ -539,7 +547,7 @@ encargada de limpiar los errores del estado.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{img/use-errors}
+  \includegraphics[width=0.6\textwidth]{img/use-errors}
   \caption{Hook \texttt{useErrors}}
   \label{fig:use-errors}
 \end{figure}

@@ -65,7 +65,7 @@ En primer lugar, se pensó en utilizar \textit{Angular} \cite{angular} ya que es
 framework bastante popular y con el que ya había trabajado anteriormente. Sin embargo,
 se descartó esta opción porque, como explican en este artículo \cite{angular-vs-react},
 este es un framework muy completo y pensado para aplicaciones grandes donde prima el
-trabajo en equipo ya que su estructura es fija y la esto la hace más compleja. Mientras
+trabajo en equipo ya que su estructura es fija y esto la hace más compleja. Mientras
 que \textit{React} \cite{react} es una biblioteca más sencilla y flexible que permite
 crear aplicaciones pequeñas como la nuestra de manera sencilla y sin una gran curva de
 aprendizaje.
@@ -139,8 +139,8 @@ de la documentación oficial \cite{sequelize-associations}. Se definen en una fu
 \texttt{associateModels} que se ejecuta justo después de realizar la conexión a la base
 de datos. Como se puede ver en el código de la imágen \ref{fig:associate-models}, se
 define la relación uno a muchos entre el modelo \texttt{User} y el modelo \texttt{Artwork},
-la relación uno a uno entre el modelo \texttt{User} y el modelo \texttt{Rating} y la
-relación uno a muchos entre el modelo \texttt{Artwork} y el modelo \texttt{Rating}.
+la relación uno a muchos entre el modelo \texttt{User} y el modelo \texttt{Rating} y la
+relación uno a muchos también, entre el modelo \texttt{Artwork} y el modelo \texttt{Rating}.
 
 También se puede ver que se definen las claves externas de cada relación y un alias para
 cada una de ellas. Esto permite realizar consultas que incluyan datos de los modelos
@@ -294,7 +294,7 @@ los posibles errores que se puedan producir y, con la función \texttt{next()}, 
 dichos errores a los middlewares que se encargan de manejar los errores (son los dos últimos
 middlewares que se pueden ver en la imágen de la app de \textit{Express}
 \ref{fig:express-app}). Estos middlewares se encargan de devolver los errores en formato
-JSON y con el código de error correspondiente, manteniendo siempre la mismaestructura de
+JSON y con el código de error correspondiente, manteniendo siempre la misma estructura de
 respuesta. Este manejo de errores es el que se propone en la documentación de \textit{Express}
 \cite{express-error-handling}.
 
@@ -396,7 +396,7 @@ La aplicación de \textit{React} \cite{react} consta de un archivo \texttt{index
 que es el punto de entrada de la aplicación y donde se encuentra el elemento
 \texttt{<div id=``root''></div>} en el cual se va a renderizar la aplicación. A nivel de
 \textit{JavaScript} se tiene un archivo \texttt{main.jsx} que es el archivo desde el que
-se inicia la aplicación y donde, a través del react-dom, se optiene el elemento
+se inicia la aplicación y donde, a través del react-dom, se obtiene el elemento
 \texttt{<div id=``root''></div>} mencionado anteriormente y en él se renderiza el componente
 \texttt{App} que es el componente principal de la aplicación.
 
@@ -499,7 +499,7 @@ se encargan de guardar y eliminar la información de autenticación del usuario 
 
 \subsubsection{Componentes}
 Los \textbf{componentes} son la base que utiliza \textit{React} \cite{react} para
-la construir las interfaces de usuario \cite{react-component}. Los componentes son como
+construir las interfaces de usuario \cite{react-component}. Los componentes son como
 funciones que engloban el marcado \textit{HTML}, los estilos \textit{CSS} y la lógica
 \textit{JavaScript} de una parte concreta de la interfaz de usuario. Los componentes
 devuelven un código \textit{JSX} \cite{jsx} muy similar al \textit{HTML} y es el que
@@ -569,7 +569,7 @@ La instancia de \textit{Axios} \cite{axios} cuenta con los métodos \texttt{get}
 \texttt{post}, \texttt{put} y \texttt{delete} que son los que se utilizan para realizar
 las peticiones \texttt{HTTP} a la API. A estos métodos hay que pasarles como primer
 parámetro la ruta de la petición, como segundo parámetro los datos que se quieran enviar
-en el body de la petición (en caso de que sea necesario) y el últmo parámetro es un objeto
+en el body de la petición (en caso de que sea necesario) y el último parámetro es un objeto
 con la configuración de la petición como, por ejemplo, los \textit{headers}.
 
 En la imágen \ref{fig:create-artwork-service} se puede ver la función \texttt{createArtwork}
